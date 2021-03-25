@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        padding: 3rem;
+        display: flex;
+        justify-content: center;
+      }
+      #left,
+      #right {
+        width: 192px;
+        height: 192px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+      }
+      #left {
+        background-color: rgb(136, 238, 229);
+      }
+      #right {
+        background-color: rgb(238, 136, 204);
+      }
+      #target {
+        font-size: 3rem;
+      }
+      button {
+        margin: auto;
+        display: block;
+        padding: 16px;
+        border: none;
+        background: rgb(0, 10, 4);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="left">
+        <span id="target">💰</span>
+      </div>
+      <div id="right"></div>
+    </div>
+    <button onclick="transferMoney()">Transfer money</button>
+    <script src="script.js"></script>
+  </body>
+</html>
