@@ -2,7 +2,7 @@
     Hello World In 4 Ways
 
     Att få ut "Hello World" (https://sv.wikipedia.org/wiki/Hello_World) brukar vara något som ofta testas vid kontakt med nya kodspråk och tekniker.
-    Nu ska vi med hjälp av JavaScript få systemet att säga Hello World på tre olika sätt.
+    Nu ska vi med hjälp av JavaScript få systemet att säga Hello World på fyra olika sätt.
     
     Lös gärna en del i taget, och ladda om index.html i webbläsaren vid varje löst del för att exekvera om skriptet.
 
