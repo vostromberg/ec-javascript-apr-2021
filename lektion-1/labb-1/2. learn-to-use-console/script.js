@@ -31,7 +31,7 @@ const person = {
     För att undvika detta kan vi antingen göra en kopia av objektet eller göra en JSON-sträng av objektet
 
     För att göra en kopia: 
-        {...person} (detta kallas för en spread) eller Object.assign(person, {})
+        {...person} (detta kallas för en spread) eller Object.assign({}, person)
     
     För att konvertera till JSON-sträng: 
         JSON.stringify(person);
