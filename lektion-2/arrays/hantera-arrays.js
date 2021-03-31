@@ -17,10 +17,10 @@ people.push({ name: "Cookie Doe", age: 10 });
 people.reverse();
 
 // plocka bort första elementet från arrayen
-const person = people.shift();
+let person = people.shift();
 
 // plocka bort sista elementet från arrayen
-const person = people.pop();
+person = people.pop();
 
 // kollar om ett objekt finns i listan
 people.includes(obj);

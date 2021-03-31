@@ -20,10 +20,10 @@ for (var i = 0; i < people.length; i++) {
   console.log(people[i].name);
 }
 
-// map() med function-syntax
+// forEach() med function-syntax
 people.forEach(function (person) {
   console.log(person.name);
 });
 
-// map() med arrow-syntax
+// forEach() med arrow-syntax
 people.forEach((person) => console.log(person.name));

@@ -33,16 +33,27 @@ let person = people.reduce(function (previousValue, currentItem) {
 }, 0);
 
 // reduce() med arrow-syntax
-let person = people.reduce((previousValue, currentItem) => previousValue + currentItem.age, 0);
+let person = people.reduce(
+  (previousValue, currentItem) => previousValue + currentItem.age,
+  0
+);
 
 // scenario 2: Vi ska hitta personen med den högsta åldern i listan
 
 // om detta ska lösas med for-loop
-let person = people[0];
+let oldestPerson = people[0];
 for (var i = 0; i < people.length; i++) {
-  if(people[i].age > person.age){
-    person = people[i];
+  if (people[i].age > person.age) {
+    oldestPerson = people[i];
   }
 }
 
-let person = people.reduce((previousValue, currentItem) => previousValue + currentItem.age, 0);
+oldestPerson = people.reduce(function (previousValue, currentItem) {
+  return previousValue.age > currentItem.age ? previousValue : currentItem;
+}, people[0]);
+
+oldestPerson = people.reduce(
+  (previousValue, currentItem) =>
+    previousValue.age > currentItem.age ? previousValue : currentItem,
+  people[0]
+);
