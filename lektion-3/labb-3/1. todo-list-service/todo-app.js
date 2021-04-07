@@ -94,8 +94,8 @@ async function init() {
     if (!selectedTodo.todo.id) {
       updatedTodo = await apiService.createTodo(title, description);
     } else {
-      updatedTodo = await apiService.updateTodo(selectedTodo.id, {
-        ...selectedTodo,
+      updatedTodo = await apiService.updateTodo(selectedTodo.todo.id, {
+        ...selectedTodo.todo,
         title,
         description,
       });
