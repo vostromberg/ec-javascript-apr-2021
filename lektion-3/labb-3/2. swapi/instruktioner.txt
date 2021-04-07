@@ -1,0 +1,11 @@
+Installera Postman
+Utforska apiet: https://swapi.dev/ 
+
+Ta reda på följande:
+* Vilket år släpptes Episod V (Empire strikes back)
+* Hur lång är Luke Skywalker
+* Vilken planet kommer Han Solo ifrån (tips använd search-parametern)
+* Vilken maxlast har skeppet Millenium Falcon?
+
+För att ta reda på svaren, använd Postman för att ställa frågor mot api:et.
+Kolla igenom api-dokumentationen för att se vilka endpoints som finns och hur du kommunicerar mot dem
