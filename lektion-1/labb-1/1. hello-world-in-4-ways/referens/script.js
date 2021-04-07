@@ -16,12 +16,12 @@
 const hello = "Hello World!";
 
 // 1. Logga variabeln hello till konsolen här
-
+console.log(hello);
 // NOTE: Öppna konsolen i webbläsaren, och se hur det ser ut. Prova de olika funktionerna på console (.log(), .warn() osv.) och se vad som händer.
 
 
 // 2. Logga variabeln hello i en popup-ruta alert()
-
+alert(hello);
 // NOTE: Värt att notera här är att alert() pausar exekvering av scriptet tills användaren tryckt bort rutan. Tryck bort popup-rutan med konsolen öppen så får du se vad som händer.
 console.log("Loggas efter alert");
 
@@ -33,7 +33,9 @@ console.log("Loggas efter alert");
     * Lägg till elementet till DOM:en
 */
 
-
+const el = document.createElement("p");
+el.innerText = hello;
+document.body.appendChild(el);
 // NOTE: Kontrollera nu vad som har hänt i DOM-trädet. Du kan göra det genom att öppna inspektorn (högerklicka någonstans på sidan och välj det som heter något i stil med inspektera/granska elemet. Olika mellan olika browsers)
 
 /* 
@@ -42,5 +44,6 @@ console.log("Loggas efter alert");
     * Kolla i index.html. Lokalisera ett element som du kan skriva hello world till
     * Sätt texten inuti p-taggen till värdet på variabeln hello
 */
-
+const el2 = document.getElementById("text-container");
+el2.innerText = hello;
 // NOTE: Kontrollera även här vad som har hänt i DOM-trädet. 

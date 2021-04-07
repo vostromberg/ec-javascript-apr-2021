@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div id="calculator">
+      <div id="display">
+        <p id="currentInput">0</p>
+        <p id="latestResult">0</p>
+      </div>
+      <div id="controlPanel">
+        <!--Lägg till onclick-event på alla knappar-->
+        <button onclick="addInput('7')">7</button>
+        <button onclick="addInput('8')">8</button>
+        <button onclick="addInput('9')">9</button>
+        <button onclick="addInput('/')" class="operator">/</button>
+        <button onclick="addInput('4')">4</button>
+        <button onclick="addInput('5')">5</button>
+        <button onclick="addInput('6')">6</button>
+        <button onclick="addInput('*')" class="operator">X</button>
+        <button onclick="addInput('1')">1</button>
+        <button onclick="addInput('2')">2</button>
+        <button onclick="addInput('3')">3</button>
+        <button onclick="addInput('+')" class="operator">+</button>
+        <button onclick="reset()" class="clear">C</button>
+        <button onclick="addInput('0')">0</button>
+        <button onclick="addInput('.')">.</button>
+        <button onclick="addInput('-')" class="operator">-</button>
+        <button onclick="calculate()" class="calculate">=</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
