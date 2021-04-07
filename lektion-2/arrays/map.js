@@ -23,10 +23,10 @@ for (var i = 0; i < people.length; i++) {
   names.push(people[i].name);
 }
 
-// forEeach() med function-syntax
+// map() med function-syntax
 let names = people.map(function (person) {
   return person.name;
 });
 
-// forEeach() med arrow-syntax
-let names = people.forEach((person) => person.name);
+// map() med arrow-syntax
+let names = people.map((person) => person.name);
