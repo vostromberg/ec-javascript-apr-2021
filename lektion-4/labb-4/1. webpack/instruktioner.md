@@ -17,7 +17,7 @@ Sätta upp webpack
 Installera några npm-paket
 --------------------------
 1.  Installera paketet uuid, det används för att generera unika id:n (https://github.com/uuidjs/uuid#readme)
-    a.  Paketet instaleras genom `npm install uuid`
+    a.  Paketet installeras genom `npm install uuid`
     b.  Importera uuid in till index.js
     c.  Generera en uuid av valfritt slag och lägg in i DOM:en
     d.  Bygg projektet genom npm run build och kolla hur resultatet ser ut i dist-foldern samt ladda om sidan i webbläsaren
