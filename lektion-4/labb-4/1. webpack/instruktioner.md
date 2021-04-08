@@ -13,6 +13,10 @@ Sätta upp webpack
 7.  Kör `npm run build` för att skapa din bundle
 8.  Nu ska du ha fått en map som heter dist med ett skript som heter main.js
     Kolla i skriptfilen för att se hur skriptet har förändrats
+9.  Nu ska vi lägga till möjlighet att automatiskt skapa om bundlen när filer i src ändras.
+    Detta görs med `npx webpack watch`
+10. Lägg till följande i package.json: `"start": "npx webpack watch"`
+11. Nu kan du skriva `npm start` i konsolen/terminalen för att automatiskt övervaka filerna och bundla om dem när något ändras
 
 Installera några npm-paket
 --------------------------
@@ -29,7 +33,7 @@ Installera några npm-paket
     d.  Iterera över resultatet och lägg in något från resultatet i DOM:en
     e.  Bygg projektet genom `npm run build` och kolla hur resultatet ser ut i dist-foldern samt ladda om sidan i webbläsaren
 
-3.  Installera ESLint (https://eslint.org/docs/user-guide/getting-started)
+3.  Installera ESLint, för att kvalitetssäkra din kod (https://eslint.org/docs/user-guide/getting-started)
     a.  Paketet installeras genom `npm install eslint --save-dev` (flaggan --save-dev anger att paketet används i utvecklingssyfte och har ingen effekt vid produktion)
     b.  Sätt upp en konfigurationsfil `npx eslint --init`
         Du får nu följande frågor, välj svaren:
