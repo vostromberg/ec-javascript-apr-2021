@@ -1,0 +1,7 @@
+.searchField {
+  display: flex;
+}
+
+.searchField input {
+  flex: 1;
+}

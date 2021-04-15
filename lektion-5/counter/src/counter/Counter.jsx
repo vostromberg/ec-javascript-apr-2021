@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Decreaser from "./Decreaser";
 import Increaser from "./Increaser";
 

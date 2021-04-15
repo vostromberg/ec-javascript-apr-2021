@@ -1,0 +1,20 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.leftContent, .rightContent{
+  padding: 24px;
+}
+
+.leftContent{
+  width: 100%;
+  max-width: 320px;
+  background-color: #dedede;
+}
+
+.rightContent{
+  flex:1;
+}
+
