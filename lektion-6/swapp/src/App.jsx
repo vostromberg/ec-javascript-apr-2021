@@ -8,7 +8,7 @@ import AutoSearchField from "./autoSearch/AutoSearchField";
 
 function App() {
   const [selectedFilm, setSelectedFilm] = useState();
-  const [searchString, setSearchString] = useState();
+  const [searchString, setSearchString] = useState("");
 
   return (
     <div className="App">
