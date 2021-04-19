@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "0065158f-4ea5-4699-bca7-f6047f831e22",
+		"name": "generic-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add-item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"John Doe\",\n    \"role\": \"UX-designer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/people/",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"people",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/people/",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"people",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/people/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"people",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Jane Doe\",\n    \"role\":\"Frontend-developer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/people/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"people",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/people/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"people",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

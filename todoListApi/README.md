@@ -1,6 +1,6 @@
 __todoListApi__
 
-Api för att skapa och hantera att-göra-listor.
+Api för att skapa och hantera objekt.
 
 För att starta api:
 1. Se till att node är installerat. För Mac med M1-chip behöver node-versionen vara minst `15.10`. Kontrollera genom att öppna ett terminalfönster och skriva node -v. 
@@ -9,15 +9,26 @@ För att starta api:
 4. För att anropa endpoints i api:et kan det göras från samma dator som det är igång på mot adressen `http://localhost:3001/`. Lista över anrop finns nedan:
 
 
-GET: `http://localhost:3001/todo` => Hämta alla todo's
+GET: `http://localhost:3001/` => Hämta alla todo's
 
-POST: `http://localhost:3001/todo` => Skapa en todo
+POST: `http://localhost:3001/` => Skapa en todo  
+innehåll i body:  
+`{  
+    title: string,  
+    description: string (ej obligatoriskt)  
+}`
 
-GET: `http://localhost:3001/todo/{ID}` => Hämta en todo på angivet ID
+GET: `http://localhost:3001/:id` => Hämta en todo på angivet ID
 
-PUT: `http://localhost:3001/todo/{ID}` => Uppdatera en todo på angivet ID
+PUT: `http://localhost:3001/todo/:id` => Uppdatera en todo på angivet ID
+innehåll i body  
+`{  
+    title: string,  
+    description: string (ej obligatoriskt),
+    completed: boolean 
+}`
 
-DELETE: `http://localhost:3001/todo/{ID}` => Radera en todo på angivet ID
+DELETE: `http://localhost:3001/todo/:id` => Radera en todo på angivet ID
 
 I projektet finns en fil som heter `todo-list.postman_collection.json`.  
 Den kan importeras in i applikationen Postman, där api:et kan utforskas ytterligare.

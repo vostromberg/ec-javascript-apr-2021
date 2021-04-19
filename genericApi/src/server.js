@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const port = process.env.PORT || 3001;
-const routes = require("./api/routes/todoListRoutes");
+const port = process.env.PORT || 3002;
+const routes = require("./api/routes/itemRoutes");
 
 const app = express();
 app.use(cors());
@@ -11,4 +11,4 @@ routes(app);
 
 app.listen(port);
 
-console.log("TodoList API server started on: " + port);
+console.log("Generic Item API server started on: " + port);
