@@ -10,17 +10,18 @@ För att starta api:
 4. För att anropa endpoints i api:et kan det göras från samma dator som det är igång på mot adressen `http://localhost:3002/`. Lista över anrop finns nedan:
 
 
-GET: `http://localhost:3002/` => Hämta alla objekt
+GET: `http://localhost:3002/:route/` => Hämta alla objekt på given route (routen skapas automatiskt om den inte finns)
+ex. `http://localhost:3002/cars/` skulle kunna hålla en samling med bilar.
 
-POST: `http://localhost:3002/` => Skapa ett objekt  
+POST: `http://localhost:3002/:route/` => Skapa ett objekt  
 innehåll i body: objekt med dina egenskaper
 
-GET: `http://localhost:3002/:id` => Hämta ett objekt på angivet ID  
+GET: `http://localhost:3002/:route/:id` => Hämta ett objekt på angivet ID  
 
-PUT: `http://localhost:3002/:id` => Uppdatera ett objekt på angivet ID  
+PUT: `http://localhost:3002/:route/:id` => Uppdatera ett objekt på angivet ID  
 Det data du skickar i body skrivs över eller in på objektet
 
-DELETE: `http://localhost:3002/:id` => Radera ett objekt på angivet ID
+DELETE: `http://localhost:3002/:route/:id` => Radera ett objekt på angivet ID
 
 I projektet finns en fil som heter `generic-api.postman_collection.json`.  
 Den kan importeras in i applikationen Postman, där api:et kan utforskas ytterligare.
