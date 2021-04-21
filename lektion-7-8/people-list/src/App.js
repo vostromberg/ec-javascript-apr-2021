@@ -4,7 +4,8 @@ import PeopleList from "./peopleList/PeopleList";
 import PersonDetails from "./personDetails/PersonDetails";
 import CreatePersonForm from "./personDetails/CreatePersonForm";
 import EditPersonForm from "./personDetails/EditPersonForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import peopleService from "./api/peopleService";
 
 const viewModes = {
   view: "View",
@@ -13,29 +14,68 @@ const viewModes = {
 };
 
 function App() {
-  const [people, setPeople] = useState([
-    {
-      id: "55edb8d2-9000-4d64-bcb7-3bd81bcc06a0",
-      name: "John Doe",
-      role: "UX-designer",
-      created: 1618488094380,
-    },
-    {
-      id: "41b52cbe-2f08-4b89-9b9f-5d36189b4abf",
-      name: "Jane Doe",
-      role: "Frontend-developer",
-      created: 1618488116543,
-    },
-  ]);
-  const [selectedPerson, setSelectedPerson] = useState(people[0]);
-  const [viewMode, setViewMode] = useState(viewModes.view);
+  const [people, setPeople] = useState([]);
+  const [selectedPerson, setSelectedPerson] = useState();
+  const [viewMode, setViewMode] = useState(viewModes.create);
+
+  const showCreateForm = () => {
+    setSelectedPerson(null);
+    setViewMode(viewModes.create);
+  };
+  
+  const selectPerson = (person) => {
+    setSelectedPerson(person);
+    setViewMode(viewModes.view);
+  };
+
+  const handlePersonSave = (newPerson) => {
+    const newArray = [...people, newPerson];
+    setPeople(newArray);
+    selectPerson(newPerson);
+  };
+
+  const handlePersonUpdate = (updatedPerson) => {
+    const newArray = people.slice();
+    for(var i = 0; i < newArray.length; i++){
+      if(newArray[i].id === updatedPerson.id){
+        newArray[i] = updatedPerson;
+        break;
+      }
+    }
+    setPeople(newArray);
+    selectPerson(updatedPerson);
+  }
+
+  const handlePersonDeleted = (deletedPerson) => {
+    setPeople(people.filter((person) => person.id !== deletedPerson.id));
+    // getPeople();
+    showCreateForm();
+  };
+
+  const getPeople = async () => {
+    const people = await peopleService.getAll();
+    setPeople(people);
+  };
+
+  useEffect(() => {
+    getPeople();
+  }, []);
 
   const renderMainSection = () => {
+    if (!selectedPerson || viewMode === viewModes.create) {
+      return (
+        <CreatePersonForm
+          onCancel={() => setViewMode(viewModes.view)}
+          onSave={handlePersonSave}
+        />
+      );
+    }
     switch (viewMode) {
       case viewModes.view:
         return (
           <PersonDetails
             person={selectedPerson}
+            onDelete={handlePersonDeleted}
             onEdit={() => setViewMode(viewModes.edit)}
           />
         );
@@ -44,24 +84,12 @@ function App() {
           <EditPersonForm
             person={selectedPerson}
             onCancel={() => setViewMode(viewModes.view)}
-            onSave={() => setViewMode(viewModes.view)}
-          />
-        );
-      case viewModes.create:
-        return (
-          <CreatePersonForm
-            onCancel={() => setViewMode(viewModes.view)}
-            onSave={() => setViewMode(viewModes.view)}
+            onSave={handlePersonUpdate}
           />
         );
       default:
         return null;
     }
-  };
-
-  const handlePersonSelected = (person) => {
-    setSelectedPerson(person);
-    setViewMode(viewModes.view);
   };
 
   return (
@@ -72,15 +100,15 @@ function App() {
           <button
             id="button-add-person"
             className="primary"
-            onClick={() => setViewMode("Create")}
+            onClick={showCreateForm}
           >
             Add
           </button>
         </h1>
         <PeopleList
           people={people}
-          selectedPersonId={selectedPerson.id}
-          onPersonSelected={handlePersonSelected}
+          selectedPerson={selectedPerson}
+          onPersonSelected={selectPerson}
         />
       </aside>
       <section>{renderMainSection()}</section>

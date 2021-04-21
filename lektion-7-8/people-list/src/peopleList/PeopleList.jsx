@@ -2,7 +2,7 @@ import React from "react";
 import PeopleListItem from "./PeopleListItem";
 
 const PeopleList = (props) => {
-  const { people, selectedPersonId } = props;
+  const { people, selectedPerson } = props;
 
   const handlePersonClicked = (person) => {
     if (props.onPersonSelected) {
@@ -17,7 +17,7 @@ const PeopleList = (props) => {
           onClick={handlePersonClicked}
           key={person.id}
           person={person}
-          isSelected={person.id === selectedPersonId}
+          isSelected={person === selectedPerson}
         />
       ))}
     </ul>

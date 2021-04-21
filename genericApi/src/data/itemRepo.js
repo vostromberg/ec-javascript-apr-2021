@@ -80,7 +80,7 @@ module.exports = (route) => {
     updateItem: (id, item) => {
       storage = {
         ...storage,
-        [route]: [route].map((x) => {
+        [route]: storage[route].map((x) => {
           if (x.id !== id) {
             return x;
           } else {
